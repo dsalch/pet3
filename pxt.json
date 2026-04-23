@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "yahboom_main": "github:dsalch/yahboom_main#2.1.10"
     },
     "files": [
         "main.blocks",
