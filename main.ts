@@ -12,7 +12,9 @@ function doGreeting () {
         }
         mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
         NewVisitor = 1
+        basic.showIcon(IconNames.SmallHeart)
     } else {
+        basic.clearScreen()
         mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.OFF)
     }
 }
@@ -30,6 +32,7 @@ function doScared () {
     basic.pause(500)
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.OFF)
+    basic.clearScreen()
 }
 basic.forever(function () {
     if (mbit_Robot.Ultrasonic_Car() < 30) {
@@ -40,7 +43,7 @@ basic.forever(function () {
     if (mbit_Robot.Avoid_Sensor(mbit_Robot.enAvoidState.OBSTACLE)) {
         doScared()
     }
-    if (Math.abs(input.acceleration(Dimension.X)) > 200 || Math.abs(input.acceleration(Dimension.Z)) > 200) {
+    if (Math.abs(input.acceleration(Dimension.X)) > 300 || Math.abs(input.acceleration(Dimension.Z)) > 300) {
         goTilted()
     }
 })
